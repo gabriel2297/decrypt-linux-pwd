@@ -15,7 +15,7 @@ def main():
         exit(0)
 
     # imprimir informacion del algoritmo
-    print("Algoritmo: %s" % algo['name'])
+    print("Algoritmo identificado: %s" % algo['name'])
 
     decrypted_pwd = performBruteForce(split_hash)
     if decrypted_pwd is None:
@@ -50,7 +50,7 @@ def performBruteForce(split_hash):
     counter_palabras = 0
     hash_a_encontrar = "$" + split_hash[1] + "$" + split_hash[2] + "$" + split_hash[3]
     salt = "$" + split_hash[1] + "$" + split_hash[2]
-    print("Buscando hash: %s con salt %s" % (hash_a_encontrar, salt))
+    print("Buscando hash \"%s\" con salt \"%s\"" % (hash_a_encontrar, salt))
     cwd = os.getcwd()
     for file in os.listdir(cwd):
         if file.endswith(".txt"):
